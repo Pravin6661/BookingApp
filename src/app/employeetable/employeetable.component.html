@@ -1,0 +1,29 @@
+<div class="employee">
+  <table border="collapse">
+    <tr>
+      <th>EMP Id</th>
+      <th>EMP Name</th>
+      <th>Designation</th>
+      <th>Location</th>
+      <th>Address</th>
+           <th *ngIf="salary">Salary</th>
+        </tr>
+    <tr class="tabledetails" *ngFor="let employeedetails of employeedetails; let i = index">
+      <td>{{employeedetails.empID}}</td>
+      <td>{{employeedetails.name}}</td>
+      <td>{{employeedetails.designation}}</td>
+      <td>{{employeedetails.location}}</td>
+      <td>{{employeedetails.address}}</td>
+      <td *ngIf="salary">{{employeedetails.salary}}</td>
+    </tr>
+
+  <tr>
+    <td *ngIf="hidebtn">
+      <button (click)="hideSalary()">Hide</button>
+    </td>
+    <td *ngIf="!hidebtn">
+      <button (click)="showbtn()">Show</button>
+    </td>
+</tr>
+  </table>
+</div>
